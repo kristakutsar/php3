@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg bg-body-light">
         <div class="container-fluid">
             <img src="ikoon.jpg" width="40" height="40" alt="">
-          <a class="navbar-brand fs-6"  href="index.php">Avaleht</a>
+          <a class="navbar-brand fs-6"  href="index.phps">Avaleht</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
