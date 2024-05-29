@@ -17,8 +17,8 @@
   
     <nav class="navbar navbar-expand-lg bg-body-light">
         <div class="container-fluid">
-            <img src="ikoon.png" width="40" height="40" alt="">
-            <a class="nav-link fs-6 color: text-body-secondary" href="index.php">Avaleht</a>
+            <img src="ikoon.jpg" width="40" height="40" alt="">
+          <a class="navbar-brand fs-6"  href="index.php">Avaleht</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -31,7 +31,7 @@
                 <a class="nav-link fs-6 color: text-body-secondary" href="teenused.php">Teenused</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link fs-6 color: text-body-secondary" href="#">Kontakt</a>
+                <a class="nav-link fs-6 color: text-body-secondary" href="kontakt.php">Kontakt</a>
               </li>
     
             </ul>
@@ -42,3 +42,63 @@
           </div>
         </div>
       </nav>
+      <div class="container mt-5">
+        <br>
+
+        <h2 class="mb-4">Oskused</h2>
+    <?php
+     $oskused = array('HTML', 'CSS', 'Bootstrap', 'PHP');
+     $varvid = array('primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark');
+     $tekstiv = array('success', 'danger', 'warning', 'info', 'dark');
+     
+
+     foreach ($oskused as $oskus) {
+      $varv = $varvid[array_rand($varvid)];
+      $text = $tekstiv[array_rand($tekstiv)];
+      $width = rand(10, 100);
+      echo "<div class='bar bg-$varv text-$text' style='width: $width%'>$oskus</div>
+      <br>";
+     }
+    ?>
+
+<section class="container mt-4">
+    <h2 class="text-center">Töötajad</h2>
+    <div class="row row-cols-1 row-cols-md-6 g-4">
+        <?php
+        // 
+        $pildid = ["devlin.jpg", "freeland.jpg", "gabriel.jpg", "pete.jpg", "peterus.jpg", "prentice.jpg"];
+
+        // 
+        foreach ($pildid as $pilt) {
+            $filename = pathinfo($pilt, PATHINFO_FILENAME);
+            $nimi = ucfirst($filename);
+            $email = $filename . "@sinunimi.ee";
+
+            echo "
+            <div class='col text-center'>
+                <div class='card h-100'>
+                    <img src='{$pilt}' alt='Pilt' class='img-fluid'>
+                    <div class='card-body'>
+                        <h5 class='card-title'>{$nimi}</h5>
+                        <p class='card-text'>{$email}</p>
+                    </div>
+                </div>
+            </div>";
+        }
+        ?>
+    </div>
+</section>
+
+
+
+      <div class="container">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Krista Kutsar ITS-23</span>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> 
+ 
+</body>
+
+</html>

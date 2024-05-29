@@ -17,7 +17,7 @@
   
     <nav class="navbar navbar-expand-lg bg-body-light">
         <div class="container-fluid">
-            <img src="ikoon.png" width="40" height="40" alt="">
+            <img src="ikoon.jpg" width="40" height="40" alt="">
           <a class="navbar-brand fs-6"  href="#">Avaleht</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active fs-6 color: text-body-secondary" aria-current="page" href="tooted.html">Tooted</a>
+                <a class="nav-link active fs-6 color: text-body-secondary" aria-current="page" href="#">Tooted</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link fs-6 color: text-body-secondary" href="teenused.php">Teenused</a>
