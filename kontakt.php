@@ -18,7 +18,7 @@
     <nav class="navbar navbar-expand-lg bg-body-light">
         <div class="container-fluid">
             <img src="ikoon.jpg" width="40" height="40" alt="">
-          <a class="navbar-brand fs-6"  href="index.phps">Avaleht</a>
+          <a class="navbar-brand fs-6"  href="index.html">Avaleht</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -46,49 +46,63 @@
         <br>
 
         <h2 class="mb-4">Oskused</h2>
-    <?php
-     $oskused = array('HTML', 'CSS', 'Bootstrap', 'PHP');
-     $varvid = array('primary', 'secondary', 'success', 'danger', 'warning', 'info', 'dark');
-     $tekstiv = array('success', 'danger', 'warning', 'info', 'dark');
-     
-
-     foreach ($oskused as $oskus) {
-      $varv = $varvid[array_rand($varvid)];
-      $text = $tekstiv[array_rand($tekstiv)];
-      $width = rand(10, 100);
-      echo "<div class='bar bg-$varv text-$text' style='width: $width%'>$oskus</div>
-      <br>";
-     }
-    ?>
-
+    
+<!-- oskused -->
 <section class="container mt-4">
-    <h2 class="text-center">Töötajad</h2>
-    <div class="row row-cols-1 row-cols-md-6 g-4">
-        <?php
-        // 
-        $pildid = ["devlin.jpg", "freeland.jpg", "gabriel.jpg", "pete.jpg", "peterus.jpg", "prentice.jpg"];
+  <h2 class="text-center">Minu oskused</h2>
+  <div class="container">
+      <?php
+      // massiivid oskustest ja värvidest
+      $skills = ["HTML", "CSS", "Bootstrap", "PHP"];
+      $colors = ["primary", "secondary", "success", "danger", "warning", "info", "dark"];
 
-        // 
-        foreach ($pildid as $pilt) {
-            $filename = pathinfo($pilt, PATHINFO_FILENAME);
-            $nimi = ucfirst($filename);
-            $email = $filename . "@sinunimi.ee";
-
-            echo "
-            <div class='col text-center'>
-                <div class='card h-100'>
-                    <img src='{$pilt}' alt='Pilt' class='img-fluid'>
-                    <div class='card-body'>
-                        <h5 class='card-title'>{$nimi}</h5>
-                        <p class='card-text'>{$email}</p>
-                    </div>
-                </div>
-            </div>";
-        }
-        ?>
-    </div>
+      // oskuste riba genereerimine suvalise värvi ja väärtusega
+      foreach ($skills as $key => $skill) {
+          $value = rand(10, 100);
+          $color = $colors[array_rand($colors)];
+          echo "
+          <div class='mb-3'>
+              <div class='d-flex justify-content-between'>
+                  <span>{$skill}</span>
+                  <span>{$value}%</span>
+              </div>
+              <div class='progress'>
+                  <div class='progress-bar bg-{$color}' role='progressbar' style='width: {$value}%' aria-valuenow='{$value}' aria-valuemin='0' aria-valuemax='100'></div>
+              </div>
+          </div>";
+      }
+      ?>
+  </div>
 </section>
 
+ <!-- töötajate pildid -->
+<section class="container mt-4">
+  <h2 class="text-center">Meie töötajad</h2>
+  <div class="row row-cols-1 row-cols-md-6 g-4">
+      <?php
+      // kataloog töötajate piltidest
+      $images = ["devlin.jpg", "freeland.jpg", "gabriel.jpg", "pete.jpg", "peterus.jpg", "prentice.jpg"];
+
+      // genereerib pildid ja andmed kokku
+      foreach ($images as $image) {
+          $filename = pathinfo($image, PATHINFO_FILENAME);
+          $name = ucfirst($filename);
+          $email = $filename . "@sinunimi.ee";
+
+          echo "
+          <div class='col text-center'>
+              <div class='card h-100'>
+                  <img src='{$image}' alt='Minu Pilt' class='img-fluid'>
+                  <div class='card-body'>
+                      <h5 class='card-title'>{$name}</h5>
+                      <p class='card-text'>{$email}</p>
+                  </div>
+              </div>
+          </div>";
+      }
+      ?>
+  </div>
+</section>
 
 
       <div class="container">
